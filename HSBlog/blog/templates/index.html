@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    {% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+		<title>Hackspace Blog Posts</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+    {% block content %}
+    {% for post in posts %}
+		<div class = 'post'>
+			<p class = 'title'>{{post.title}}</p>
+			<p class = 'author' >By: {{post.author}}</p>
+			<p class = 'date' >{{post.date}}</p>
+			<p class = 'content'>{{post.text}}</p>
+		</div>
+    {% endfor %}
+    {% endblock content %}
+	</body>
+</html>
